@@ -1,6 +1,12 @@
-# Chrome Extension Webpack Boilerplate
+# Chrome Extension Webpack Boilerplate - Vue.js
 
-A basic foundation boilerplate for rich Chrome Extensions using [Webpack](https://webpack.github.io/) to help you write modular and modern Javascript code, load CSS easily and [automatic reload the browser on code changes](https://webpack.github.io/docs/webpack-dev-server.html#automatic-refresh).
+A customized fork of [chrome-extension-webpack-boilerplate](https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate)
+
+Built in the process of building a thoroughly tested and robust Ethereum Wallet Chrome Extension. !! Details coming soon !!
+
+Useful ? Ether tips appreciated 0x387006D751F266a2FB8De03B589Cf7a6e7c844A3
+
+A basic foundation boilerplate for rich Chrome Extensions using [Webpack](https://webpack.github.io/) and [Vue](https://vuejs.org/) to help you write modular and modern Javascript code, load CSS easily and [automatically reload the browser on code changes](https://webpack.github.io/docs/webpack-dev-server.html#automatic-refresh).
 
 ## Developing a new extension
 _I'll assume that you already read the [Webpack docs](https://webpack.github.io/docs) and the [Chrome Extension](https://developer.chrome.com/extensions/getstarted) docs._
@@ -26,6 +32,8 @@ The boilerplate is already prepared to have a popup, a options page and a backgr
 Each page has its own [assets package defined](https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate/blob/master/webpack.config.js#L16-L20). So, to code on popup you must start your code on `src/js/popup.js`, for example.
 
 You must use the [ES6 modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) to a better code organization. The boilerplate is already prepared to that and [here you have a little example](https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate/blob/master/src/js/popup.js#L2-L4).
+
+
 
 ## Webpack auto-reload and HRM
 To make your workflow much more efficient this boilerplate uses the [webpack server](https://webpack.github.io/docs/webpack-dev-server.html) to development (started with `npm run server`) with auto reload feature that reloads the browser automatically every time that you save some file o your editor.

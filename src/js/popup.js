@@ -1,4 +1,7 @@
-import "../css/popup.css";
-import hello from "./popup/example";
+import Vue from 'vue'
+import PopUp from './popup/popup.vue'
 
-hello();
+new Vue({
+  el: '#app',
+  components: { PopUp }
+})
