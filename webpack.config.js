@@ -14,8 +14,6 @@ var alias = {
 
 var secretsPath = path.join(__dirname, ("secrets." + env.NODE_ENV + ".js"));
 
-var fileExtensions = ["jpg", "jpeg", "png", "gif", "eot", "otf", "svg", "ttf", "woff", "woff2"];
-
 if (fileSystem.existsSync(secretsPath)) {
   alias["secrets"] = secretsPath;
 }
@@ -38,8 +36,19 @@ var options = {
         exclude: /node_modules/
       },
       {
-        test: new RegExp('\.(' + fileExtensions.join('|') + ')$'),
-        loader: "file-loader?name=[name].[ext]",
+        test: /\.(jpg|jpeg|png|gif|svg)$/,
+        loader: "file-loader",
+        options: {
+          name: '[path][name].[ext]'
+        },
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(eot|otf|ttf|woff|woff2)$/,
+        loader: "file-loader",
+        options: {
+          name: '[path][name].[ext]'
+        },
         exclude: /node_modules/
       },
       {
@@ -79,6 +88,9 @@ var options = {
         }))
       }
     }]),
+    new CopyWebpackPlugin([
+      { from: 'src/img' }
+    ]),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "popup.html"),
       filename: "popup.html",
